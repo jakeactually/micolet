@@ -1,0 +1,2 @@
+class UserMetum < ApplicationRecord
+end
