@@ -1,7 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  connect() {
-    this.element.textContent = "Hello World!"
+  static targets = ["preferences"];
+
+  update_prefs() {
+    const checked = document.querySelectorAll('.preference [type="checkbox"]:checked');
+    this.preferencesTarget.value = [...checked].map(x => x.id.split('_')[1]).join();
   }
 }

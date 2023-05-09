@@ -12,18 +12,19 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :lastname, style: "display: block" %>
-    <%= form.text_field :lastname %>
-  </div>
-
-  <div>
     <%= form.label :email, style: "display: block" %>
     <%= form.text_field :email %>
+  </div>
+
+  <div data-controller="hello">
+    <% for pref in [:men, :women, :children] do %>
+      <div class="preference">
+        <%= form.label pref, style: "display: block" %>
+        <%= form.check_box pref, 'data-action': "change->hello#update_prefs" %>
+      </div>
+    <% end %>
+
+    <input type="hidden" name="preferences" data-hello-target="preferences">
   </div>
 
   <div>
