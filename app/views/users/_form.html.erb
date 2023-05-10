@@ -11,23 +11,43 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.email_field :email %>
+  <h1 style="margin-bottom: 0;">
+    Micolet
+  </h1>
+
+  <div style="color: #999; margin-bottom: 60px;">
+    <%= I18n.t 'almost_new_fashion' %>
+  </div>
+  <div style="font-size: 1.1em; margin: 10px 10px;" class="subtitle">
+    <%= I18n.t 'welcome' %>
+  </div>
+  <div style="margin-bottom: 20px; font-weight: bold;" class="subtitle">
+    <%= I18n.t 'subscribe_to_receive_newsletter' %>
   </div>
 
-  <div data-controller="hello">
-    <% for pref in [:men, :women, :children] do %>
-      <div class="preference">
-        <%= form.label pref, style: "display: block" %>
-        <%= form.check_box pref, 'data-action': "change->hello#update_prefs" %>
-      </div>
-    <% end %>
+  <div class="wrap">
+    <div style="margin-bottom: 20px;">
+      <%= form.label :email, style: "display: block", class: "label" %>
+      <%= form.email_field :email, placeholder: (I18n.t 'example_email') %>
+    </div>
 
-    <input type="hidden" name="preferences" data-hello-target="preferences">
+    <div class="label">
+      <%= I18n.t 'preferences' %>
+    </div>
+
+    <div data-controller="hello" style="margin-bottom: 20px;">
+      <% for pref in [:men, :women, :children] do %>
+        <div class="preference">
+          <%= form.label (I18n.t "#{pref}s_fashion"), style: "display: block" %>
+          <%= form.check_box pref, 'data-action': "change->hello#update_prefs" %>
+        </div>
+      <% end %>
+
+      <input type="hidden" name="preferences" data-hello-target="preferences">
+    </div>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit value: (I18n.t 'subscribe_me') %>
   </div>
 <% end %>

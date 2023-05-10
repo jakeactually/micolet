@@ -30,4 +30,14 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  almost_new_fashion: "Almost new fashion with guarantee"
+  welcome: "Welcome! Soon we will launch our site in this country."
+  subscribe_to_receive_newsletter: "Subscribe to receive our newsletter."
+  email: "Email"
+  example_email: "example@email.com"
+  preferences: "Preferences"
+  womens_fashion: "Women's Fashion"
+  mens_fashion: "Men's Fashion"
+  childrens_fashion: "Children's Fashion"
+  subscribe_me: "Subscribe me!"
+
